@@ -1,8 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const MembersCard = (props) => {
-  console.log(props);
-
+  
   const displayMembers = props.members.map(member => {
     return (
       <div>
@@ -17,4 +17,8 @@ const MembersCard = (props) => {
   );
 };
 
-export default MembersCard;
+export const mapStateToProps = state => ({
+  members: state.members
+});
+
+export default connect(mapStateToProps, null)(MembersCard);

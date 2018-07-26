@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import MembersCard from '../MembersCard/MembersCard';
+import { connect } from 'react-redux';
+import { updateMembers } from '../../actions/index';
 
 class Card extends Component {
   constructor(props){
@@ -17,6 +19,7 @@ class Card extends Component {
      return memberData;
    });
    const allMembers = await Promise.all(members);
+   this.props.handleMembers(allMembers);
    this.setState({members:allMembers});
  };
 
@@ -33,14 +36,20 @@ class Card extends Component {
        <h3>{this.props.coatOfArms}</h3>
        <h3>{this.props.ancestralWeapons}</h3>
        <h3>{this.props.words}</h3>
+       {this.state.members.length &&
        <div>
          <h3>House Members</h3>
-         <MembersCard members={this.state.members} /> 
+         <MembersCard  /> 
        </div>
+       }
      </div>
-  
+        
    );
  }
 }
 
-export default Card; 
+export const mapDispatchToProps = dispatch => ({
+  handleMembers: allMembers => dispatch(updateMembers(allMembers))
+});
+
+export default connect(null, mapDispatchToProps)(Card); 
