@@ -21,7 +21,7 @@ describe('mapStateToProps', () => {
 });
 
 describe('mapDispatchToProps', () => {
-  it('calls dispatch with an addTodo action when handleHouses is called', () => {
+  it('calls dispatch with an addHouses action when handleHouses is called', () => {
     
     const mockDispatch = jest.fn();
 
