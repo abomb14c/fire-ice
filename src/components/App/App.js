@@ -6,6 +6,8 @@ import './App.css';
 import { connect } from 'react-redux';
 import { updateHouses } from '../../actions';
 import {fetchHouses} from '../../apiCalls/apiCalls';
+import CardContainer from '../CardContainer/CardContainer';
+import Card from '../Card/Card';
 
 class App extends Component {
 
@@ -26,7 +28,7 @@ class App extends Component {
           {!this.props.houses &&
              <img src={icon} alt="loading" />
           }
-          
+          <CardContainer />
         </div>
       </div>
     );

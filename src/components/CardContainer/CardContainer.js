@@ -9,7 +9,7 @@ export const CardContainer = (props) => {
     return (<Card {...house} />)
   });
   return (
-    <div>
+    <div className='Container'>
       {displayCards}
     </div>
   );
