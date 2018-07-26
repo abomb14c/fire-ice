@@ -20,16 +20,13 @@ class App extends Component {
       <div className='App'>
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          {!this.props.houses &&
-            <img src={icon} alt="loading" />
-          }
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {
-            this.props.fakeAction();
-            alert(this.props.fake);
-          }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
+          {!this.props.houses &&
+             <img src={icon} alt="loading" />
+          }
+          
         </div>
       </div>
     );
@@ -45,8 +42,9 @@ const mapStateToProps = (state) => ({
   houses: state.houses
 });
 
-
 const mapDispatchToProps = dispatch => ({ 
   handleHouses: (houseData) => dispatch(updateHouses(houseData))
 });
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
