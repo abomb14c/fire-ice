@@ -33,12 +33,14 @@ class Card extends Component {
        <h3>{this.props.coatOfArms}</h3>
        <h3>{this.props.ancestralWeapons}</h3>
        <h3>{this.props.words}</h3>
+       {this.state.members.length &&
        <div>
          <h3>House Members</h3>
          <MembersCard members={this.state.members} /> 
        </div>
+       }
      </div>
-  
+        
    );
  }
 }
