@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
+import icon from './wolf.gif';
 import './App.css';
 import { connect } from 'react-redux';
 import { updateHouses } from '../../actions';
@@ -19,6 +20,9 @@ class App extends Component {
       <div className='App'>
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
+          {!this.props.houses &&
+            <img src={icon} alt="loading" />
+          }
           <h2>Welcome to Westeros</h2>
           <button onClick={() => {
             this.props.fakeAction();
@@ -37,7 +41,11 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
+const mapStateToProps = (state) => ({
+  houses: state.houses
+});
+
+
 const mapDispatchToProps = dispatch => ({ 
   handleHouses: (houseData) => dispatch(updateHouses(houseData))
 });
