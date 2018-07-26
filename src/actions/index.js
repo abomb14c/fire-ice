@@ -5,3 +5,10 @@ export const updateHouses = (houseData) => {
     houseData
   };
 };
+
+export const updateMembers = (allMembers) => {
+  return {
+    type:"ADD_MEMBERS",
+    allMembers
+  };
+};
