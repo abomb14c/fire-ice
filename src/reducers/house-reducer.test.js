@@ -3,13 +3,10 @@ import houseReducer from './house-reducer';
 describe('houseReducer', () => {
   it('should return the initial state', () => {
 
-    // Setup
     const expected = [];
 
-    // Execution
     const result = houseReducer(undefined, {});
 
-    // Expectation
     expect(result).toEqual(expected);
   });
 

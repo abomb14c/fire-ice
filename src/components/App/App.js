@@ -40,11 +40,11 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   houses: state.houses
 });
 
-const mapDispatchToProps = dispatch => ({ 
+export const mapDispatchToProps = dispatch => ({ 
   handleHouses: (houseData) => dispatch(updateHouses(houseData))
 });
 
