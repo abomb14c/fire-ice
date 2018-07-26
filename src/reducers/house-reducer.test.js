@@ -10,7 +10,7 @@ describe('houseReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return houseData on action.type of "ADD_HOUSES', () => {
+  it('should return allMembers on action.type of "ADD_MEMBERS', () => {
     
     const expected = [{}, {}, {}];
 
