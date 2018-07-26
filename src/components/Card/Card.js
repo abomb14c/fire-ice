@@ -39,7 +39,7 @@ class Card extends Component {
        {this.state.members.length &&
        <div>
          <h3>House Members</h3>
-         <MembersCard members={this.state.members} /> 
+         <MembersCard  /> 
        </div>
        }
      </div>
